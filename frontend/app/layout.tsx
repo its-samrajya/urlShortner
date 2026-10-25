@@ -1,30 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const inter = Inter({
+	variable: "--font-sans",
 	subsets: ["latin"],
+	display: "swap",
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const jetbrainsMono = JetBrains_Mono({
+	variable: "--font-mono",
 	subsets: ["latin"],
+	display: "swap",
 });
 
 export const metadata: Metadata = {
 	title: "ZipMyURL — Shorten Your Links",
 	description:
-		"Turn long URLs into short, shareable links with ZipMyURL. Create short links quickly and easily.",
+		"Shorten long URLs into short, shareable links instantly with ZipMyURL. Create and share your links in seconds.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
 	return (
 		<html
 			lang="en"
-			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+			className={`${inter.variable} ${jetbrainsMono.variable} h-full antialiased`}
 		>
-			<body className="min-h-full flex flex-col dark">{children}</body>
+			<body className="min-h-full bg-background text-foreground antialiased dark">
+				{children}
+			</body>
 		</html>
 	);
 }
