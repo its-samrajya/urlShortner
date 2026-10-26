@@ -51,7 +51,7 @@ export const LandingPage = () => {
 				throw new Error(data.error || "Failed to generate short URL");
 			}
 
-			setShortUrl(`${process.env.NEXT_PUBLIC_API_URL}/${data.id}`);
+			setShortUrl(`${process.env.NEXT_PUBLIC_BASE_URL}/${data.id}`);
 		} catch (error) {
 			setError(error instanceof Error ? error.message : "Something went wrong");
 		} finally {
