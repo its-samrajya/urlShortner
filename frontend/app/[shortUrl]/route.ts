@@ -6,7 +6,7 @@ export async function GET(
 ) {
 	const { shortUrl } = await params;
 
-	const backendUrl = process.env.NEXT_PUBLIC_API_URL;
+	const backendUrl = process.env.BACKEND_URL ?? process.env.NEXT_PUBLIC_API_URL;
 
 	if (!backendUrl) {
 		return NextResponse.json(
