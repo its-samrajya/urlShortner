@@ -20,7 +20,7 @@ A full-stack URL shortener that converts long URLs into short, shareable links w
 
 ```bash
 git clone <YOUR_REPOSITORY_URL>
-cd shortlink
+cd urlShortner
 ```
 
 ### 2. Configure environment variables
